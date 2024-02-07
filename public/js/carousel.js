@@ -5,7 +5,7 @@ var status_ivo = 0;
 let params = new URLSearchParams(document.location.search);
 const ivo_id = params.get('id');
 var actualizacion = null
-var path_url = 'https://ivo.test/';
+var path_url = 'https://ivo.test/api/';
 
 if(params.get('display') == 'test'){
     console.log('--- inicializando en ambiente de pruebas ---');
@@ -115,7 +115,7 @@ function checkForUpdates(){
 };
 
 function get_files(){
-    var url = path_url + 'api/totem-files/' + ivo_id;
+    var url = path_url + 'totem-files/' + ivo_id;
     $.ajax({
         type: "get",
         url: url,
