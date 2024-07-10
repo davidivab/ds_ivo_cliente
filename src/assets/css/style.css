@@ -6,6 +6,7 @@
 .container {
     position: relative;
     background: #aad5f6;
+    overflow: hidden;
 }
 .slide-img {
     width: 100%;
@@ -36,7 +37,6 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    overflow-x: hidden;
 }
 .caption {
     background: rgba(0, 0, 0, 0.03);
@@ -124,6 +124,7 @@
     position: absolute;
     right: 50px;
     top: 35px;
+    z-index: 999;
 }
 .status_span{
     height: 4px;

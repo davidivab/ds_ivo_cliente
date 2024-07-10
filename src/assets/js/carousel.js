@@ -9,7 +9,7 @@ var path_url = 'https://ivo.test/api/';
 
 if(params.get('display') == 'test'){
     console.log('--- inicializando en ambiente de pruebas ---');
-    path_url = 'https://ivo.iyata.net/api/';
+    path_url = 'https://ivo.test/api/';
 }else if(params.get('display') == 'prod'){
     console.log('--- inicializando en ambiente de producción ---');
     path_url = 'https://control.ivo.com.co/api/';
@@ -80,7 +80,7 @@ function interval(val, type, ref){
 
 function ping_status(){
     let statusDiv = document.getElementById('status_point');
-    var url = 'https://ivo.test/api/status';
+    var url = path_url + 'status';
     $.ajax({
         type: "get",
         url: url,
@@ -115,6 +115,7 @@ function checkForUpdates(){
 };
 
 function get_files(){
+    console.log(ivo_id);
     var url = path_url + 'totem-files/' + ivo_id;
     $.ajax({
         type: "get",
@@ -167,6 +168,11 @@ function get_files(){
         }
     });
 };
+
+function downloadFiles()
+{
+        
+}
 
 var timeOutCheck = setTimeout(setTimeOutCheck, 1000 * 60 * 5);
 function setTimeOutCheck() {
